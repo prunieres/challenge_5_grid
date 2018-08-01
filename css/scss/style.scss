@@ -1,15 +1,35 @@
+// Mobile First
+ul {
+  padding-left: 0;
+  margin :0;
+  li {
+    list-style: none;
+  }
+}
 body {
+  margin: 0;
+  padding: 0;
+  nav {
+    background: rgb(50, 50, 50);
+    color: white;
+    padding: 2em;
+    ul {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
   main.wrapper {
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-auto-rows: minmax(200px, auto);
+    // display: grid;
+    // grid-template-columns: 1fr 4fr;
+    // grid-auto-rows: minmax(200px, auto);
     .main-div {
-      color:white;
-      background: rgb(42, 0, 52);
+      padding: 1em;
+      color:rgb(71, 71, 71);
+      background: lightgrey;
     }
     .main-div:nth-child(odd) {
       color:white;
-      background: rgb(0, 8, 52);
+      background: grey;
     }
     section.main-div {
       div.row-1{
@@ -20,7 +40,7 @@ body {
           color: white;
           background: black;
           img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
           }
         }
@@ -29,14 +49,69 @@ body {
         display: grid;
         grid-template-columns: 2fr 1fr;
         grid-auto-rows: minmax(200px, auto);
-         section.right{
-            // display: grid;
-            // justify-content: space-between;
-            p{
-
-            }
+        section.right{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
         }
       }
     }
   }
+}
+
+// breakpoint: media 856px
+@media screen and(min-width: 856px) {
+  body {
+    margin: 0;
+    padding: 0;
+    // nav {
+    //   background: rgb(50, 50, 50);
+    //   color: white;
+    //   padding: 2em;
+    //   ul {
+    //     display: flex;
+    //     justify-content: space-around;
+    //   }
+    // }
+    main.wrapper {
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+      grid-auto-rows: minmax(200px, auto);
+      .main-div {
+        padding: 1em;
+        color:rgb(71, 71, 71);
+        background: lightgrey;
+      }
+      .main-div:nth-child(odd) {
+        color:white;
+        background: grey;
+      }
+      section.main-div {
+        div.row-1{
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-auto-rows: minmax(200px, auto);
+          figure {
+            color: white;
+            background: black;
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+        div.row-2 {
+          display: grid;
+          grid-template-columns: 2fr 1fr;
+          grid-auto-rows: minmax(200px, auto);
+          section.right{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+  }
+
 }
